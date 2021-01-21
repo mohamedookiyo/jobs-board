@@ -1,0 +1,27 @@
+{
+  "short_name": "Jobs Board",
+  "name": "Jobs Board",
+  "description": "A fully-functional jobs board using the GitHub Jobs API data.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#5662E1",
+  "background_color": "#5662E1",
+  "orientation": "portrait-primary"
+}

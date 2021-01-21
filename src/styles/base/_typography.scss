@@ -1,0 +1,36 @@
+//////////////////////////////
+// TYPOGRAPHY
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+body {
+  font-family: $kumbh-sans;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--body-bg);
+  color: var(--body-text);
+}
+
+h1, h2, h3 {
+	font-weight: 700;
+	color: var(--heading);
+}
+  
+ul, ol {
+	list-style: outside none none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	transition: all 0.4s ease-in-out;
+}
+  
+a:hover {
+	text-decoration: none;
+}
+  
+a:focus {
+	outline: none;
+}

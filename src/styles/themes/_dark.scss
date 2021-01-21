@@ -1,0 +1,8 @@
+html[data-theme="dark"] {
+  --body-bg: var(--midnight);
+  --body-text: var(--dark-gray);
+  --heading: var(--white);
+  --card-bg: var(--very-dark-blue);
+  --btn-bg: var(--light-violet);
+  --footer-bg: var(--dark-gray);
+}
