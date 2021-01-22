@@ -1,0 +1,89 @@
+.header {
+  background: url("../../images/desktop/bg-pattern-header.svg") no-repeat;
+  background-size: 144rem 16rem;
+  height: 16rem;
+  padding-top: 4rem;
+
+  @media only screen and (min-width: 90em) {
+    background-size: cover;
+    background-color: var(--violet);
+  }
+
+  @include breakpoint(tablet-portrait) {
+    background: url("../../images/tablet/bg-pattern-header.svg") no-repeat;
+    background-size: 76.8rem 16rem;
+    border-radius: 0 0 0 10rem;
+  }
+
+  @include breakpoint(mobile-lg) {
+    border-radius: 0;
+    background-color: var(--violet);
+  }
+
+  @include breakpoint(mobile-sm) {
+    background: url("../../images/mobile/bg-pattern-header.svg") no-repeat;
+    background-size: 37.5rem 13.6rem;
+    height: 13.6rem;
+  }
+
+  & .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 11.5rem;
+    height: 3.2rem;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+  }
+
+  &__theme-switch {
+    position: relative;
+    width: 4.4rem;
+    height: 2.2rem;
+
+    & input {
+      display: none;
+
+      &:checked + .header__slider:before {
+        transform: translateX(calc(4.4rem - (1.4rem + 1rem)));
+      }
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    background-color: var(--white);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    &.round {
+      border-radius: 1.1rem;
+
+      &:before {
+        border-radius: 50%;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      bottom: 0.4rem;
+      background-color: var(--violet);
+      width: 1.4rem;
+      height: 1.4rem;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
