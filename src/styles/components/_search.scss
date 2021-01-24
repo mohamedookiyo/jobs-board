@@ -4,7 +4,7 @@
   background-color: var(--card-bg);
   height: 8rem;
   transform: translateY(-50%);
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   padding: 0 2rem;
   box-shadow: var(--form-shadow);
 
@@ -18,10 +18,18 @@
   &__description,
   &__location {
     border-right: 0.1rem solid var(--input-border-color);
+
+    @include breakpoint(tablet-portrait) {
+      border-right: 0;
+    }
   }
 
   &__cta {
     justify-content: space-between;
+
+    @include breakpoint(tablet-portrait) {
+      gap: 0.5rem;
+    }
   }
 
   &__checkbox {
@@ -67,6 +75,68 @@
       &:active {
         border: none;
       }
+    }
+  }
+
+  &__popup {
+    position: fixed;
+    top: 24rem;
+    left: 4rem;
+    right: 4rem;
+    background-color: var(--card-bg);
+    display: none;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    animation: popup 0.4s ease-in-out;
+    z-index: 2;
+
+    &.active {
+      display: block;
+    }
+
+    &-close {
+      position: absolute;
+      top: -1.4rem;
+      right: 1.8rem;
+      background-color: var(--light-gray);
+      border: 0.2rem solid var(--light-gray);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    @include breakpoint(tablet-portrait) {
+      display: none;
+    }
+
+    & > .form__location {
+      border-bottom: 0.1rem solid var(--input-border-color);
+
+      & > input[type="text"] {
+        padding: 2rem 0 2rem 2.3rem;
+      }
+    }
+
+    &-cta {
+      margin-top: 2.5rem;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -100vh;
+    background-color: rgba(18, 23, 33, 0.6);
+    display: none;
+    z-index: 1;
+
+    &.active {
+      display: block;
+    }
+
+    @include breakpoint(tablet-portrait) {
+      display: none;
     }
   }
 }

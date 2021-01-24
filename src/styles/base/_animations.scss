@@ -12,3 +12,13 @@
     transform: scale(1);
   }
 }
+
+@keyframes popup {
+  from {
+    transform: translateY(-25%) scale(0.8);
+  }
+
+  to {
+    transform: translateY(0) scale(1);
+  }
+}

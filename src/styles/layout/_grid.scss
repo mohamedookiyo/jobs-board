@@ -17,6 +17,10 @@
   @include breakpoint(mobile-lg) {
     padding: 0 4rem;
   }
+
+  @include breakpoint(mobile-sm) {
+    padding: 0 3rem;
+  }
 }
 
 .grid {
@@ -36,6 +40,15 @@
 
     @include breakpoint(tablet-portrait) {
       display: none;
+    }
+
+    &-mobile {
+      display: none;
+
+      @include breakpoint(tablet-portrait) {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }

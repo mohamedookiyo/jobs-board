@@ -7,7 +7,7 @@
   font-weight: 700;
   color: var(--white);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   outline: none;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
@@ -25,5 +25,28 @@
       background-color: var(--light-violet);
       box-shadow: 0 0.8rem 1.6rem rgba(96, 106, 215, 0.25);
     }
+  }
+
+  &__filter,
+  &__icon {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.4rem 1.8rem;
+  }
+
+  &__filter {
+    background-color: transparent;
+    fill: var(--icon-filter-fill);
+  }
+
+  &__icon {
+    background-color: var(--violet);
+  }
+
+  &--full {
+    background-color: var(--violet);
+    margin-top: 5rem;
+    padding: 2rem;
+    width: 100%;
   }
 }
