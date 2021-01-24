@@ -3,6 +3,10 @@ html[data-theme="light"] {
   --body-text: var(--dark-gray);
   --heading: var(--very-dark-blue);
   --card-bg: var(--white);
-  --btn-bg: var(--violet);
+  --form-shadow: 0 0.5rem 1.5rem rgba(96, 106, 215, 0.15);
+  --input-text-color: var(--very-dark-blue);
+  --input-border-color: #e0e0e0;
+  --checkbox-bg: #dedede;
+  --full-time-color: var(--very-dark-blue);
   --footer-bg: var(--white);
 }

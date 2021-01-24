@@ -18,3 +18,24 @@
     padding: 0 4rem;
   }
 }
+
+.grid {
+  display: grid;
+
+  &__search {
+    grid-template-columns: 1fr 28% 30%;
+    gap: 2rem;
+
+    @include breakpoint(laptop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint(tablet-landscape) {
+      grid-template-columns: 29% 29% 1fr;
+    }
+
+    @include breakpoint(tablet-portrait) {
+      display: none;
+    }
+  }
+}

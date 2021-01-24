@@ -1,0 +1,72 @@
+//////////////////////////////
+// SEARCH
+.form {
+  background-color: var(--card-bg);
+  height: 8rem;
+  transform: translateY(-50%);
+  border-radius: 0.5rem;
+  padding: 0 2rem;
+  box-shadow: var(--form-shadow);
+
+  &__description,
+  &__location,
+  &__cta {
+    display: flex;
+    align-items: center;
+  }
+
+  &__description,
+  &__location {
+    border-right: 0.1rem solid var(--input-border-color);
+  }
+
+  &__cta {
+    justify-content: space-between;
+  }
+
+  &__checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+
+    & > span {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--full-time-color);
+      margin-left: 1.5rem;
+      padding-top: 0.75rem;
+
+      @include breakpoint(tablet-landscape) {
+        font-size: 1.4rem;
+      }
+    }
+
+    & > input {
+      background-color: var(--checkbox-bg);
+      width: 2.5rem;
+      height: 2.5rem;
+      appearance: none;
+      border-radius: 0.3rem;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+
+      &:checked {
+        background-color: var(--violet);
+
+        & + span::before {
+          content: url("../../images/desktop/icon-check.svg");
+          position: absolute;
+          left: 0.5rem;
+          animation: checkbox 0.4s ease-in-out;
+        }
+      }
+
+      &:active {
+        border: none;
+      }
+    }
+  }
+}
