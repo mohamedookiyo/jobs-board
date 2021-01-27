@@ -51,4 +51,9 @@
       }
     }
   }
+
+  &__home {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-gap: 7rem 3rem;
+  }
 }

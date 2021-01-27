@@ -1,0 +1,51 @@
+//////////////////////////////
+// CARD
+.card {
+  position: relative;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  border-radius: 0.8rem;
+  padding: 0 2.5rem 2.5rem;
+  box-shadow: var(--card-box-shadow);
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
+
+  &__logo {
+    background-color: var(--violet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.4rem;
+    height: 5.4rem;
+    border-radius: 1.5rem;
+    transform: translateY(-50%);
+  }
+
+  &__info {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.6rem;
+  }
+
+  &__title {
+    margin: 1rem 0 2rem;
+    & h3 {
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__location {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--violet);
+    margin-top: auto;
+  }
+}

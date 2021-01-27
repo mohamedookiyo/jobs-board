@@ -1,0 +1,18 @@
+//////////////////////////////
+// HOME
+
+.home {
+  position: relative;
+  margin: 8rem auto 8rem;
+  padding-bottom: 14rem;
+
+  &__cta {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
