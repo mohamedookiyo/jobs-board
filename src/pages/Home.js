@@ -18,25 +18,57 @@ const Home = () => {
     if (hasNextPage) setPage(page + 1);
   };
 
+  // Handle params
+  const handleParamChange = (e) => {
+    const param = e.target.name;
+    const value = e.target.value;
+
+    // Set page to 1 after each new search query
+    setPage(1);
+
+    setParams((prevParams) => {
+      return { ...prevParams, [param]: value };
+    });
+  };
+
+  // Handle full time checkbox
+  const handleFullTime = (e) => {
+    const param = e.target.name;
+    const value = e.target.checked;
+
+    // Set page to 1 after each new search query
+    setPage(1);
+
+    setParams((prevParams) => {
+      return { ...prevParams, [param]: value };
+    });
+  };
+
   return (
     <>
-      <Search />
+      <Search
+        params={params}
+        onParamChange={handleParamChange}
+        onFullTime={handleFullTime}
+      />
       {error && <Error error={error} />}
 
       <section className="home container grid grid__home">
-        {data.map((job) => (
-          <Card key={job.id} job={job} />
-        ))}
-
         {!error && (
           <>
+            {data.map((job) => (
+              <Card key={job.id} job={job} />
+            ))}
+
             {loading ? (
               <Loader loadingState="fetchingMoreJobs" />
             ) : (
               <div className="home__cta">
-                <button className="btn btn__load" onClick={loadMore}>
-                  Load More
-                </button>
+                {hasNextPage && (
+                  <button className="btn btn__load" onClick={loadMore}>
+                    Load More
+                  </button>
+                )}
               </div>
             )}
           </>

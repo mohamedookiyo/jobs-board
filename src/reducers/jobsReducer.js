@@ -1,5 +1,6 @@
 import {
   MAKE_REQUEST,
+  MAKE_NEW_REQUEST,
   FETCH_DATA,
   HAS_NEXT_PAGE,
   FAILURE_TO_FETCH_DATA,
@@ -13,6 +14,13 @@ export const jobsReducer = (state, action) => {
       return {
         ...state,
         loading: true,
+      };
+    case MAKE_NEW_REQUEST:
+      return {
+        ...state,
+        loading: true,
+        data: [],
+        error: false,
       };
     case FETCH_DATA:
       const { jobs } = payload;

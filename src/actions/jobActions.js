@@ -3,6 +3,11 @@ export const makeRequest = () => ({
   type: MAKE_REQUEST,
 });
 
+export const MAKE_NEW_REQUEST = "MAKE_NEW_REQUEST";
+export const makeNewRequest = () => ({
+  type: MAKE_NEW_REQUEST,
+});
+
 export const FETCH_DATA = "FETCH_DATA";
 export const fetchData = (jobs) => ({
   type: FETCH_DATA,

@@ -18,7 +18,7 @@ const handlePopup = (e) => {
 };
 
 // Search form component
-const Search = () => {
+const Search = ({ params, onParamChange, onFullTime }) => {
   return (
     <div className="container">
       <form className="form grid grid__search">
@@ -27,16 +27,29 @@ const Search = () => {
           <input
             type="text"
             name="description"
+            value={params.description || ""}
+            onChange={onParamChange}
             placeholder="Filter by title and companies"
           />
         </div>
         <div className="form__location">
           <img src={locationIcon} alt="Location icon" />
-          <input type="text" name="location" placeholder="Filter by location" />
+          <input
+            type="text"
+            name="location"
+            value={params.location || ""}
+            onChange={onParamChange}
+            placeholder="Filter by location"
+          />
         </div>
         <div className="form__cta">
           <label className="form__checkbox">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="full_time"
+              value={params.full_time || false}
+              onClick={onFullTime}
+            />
             <span>Full Time</span>
           </label>
           <button className="btn btn__search" type="submit">
@@ -49,6 +62,8 @@ const Search = () => {
           <input
             type="text"
             name="description"
+            value={params.description || ""}
+            onChange={onParamChange}
             placeholder="Filter by title..."
           />
         </div>
@@ -73,12 +88,19 @@ const Search = () => {
             className="form__popup-location"
             type="text"
             name="location"
+            value={params.location || ""}
+            onChange={onParamChange}
             placeholder="Filter by location..."
           />
         </div>
         <div className="form__popup-cta">
           <label className="form__checkbox">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name="full_time"
+              value={params.full_time || false}
+              onClick={onFullTime}
+            />
             <span>Full Time Only</span>
           </label>
           <button className="btn btn__search btn--full" type="submit">
