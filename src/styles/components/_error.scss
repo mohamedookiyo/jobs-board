@@ -1,0 +1,28 @@
+//////////////////////////////
+// ERROR
+
+.error {
+  margin-top: 5rem;
+
+  &__text {
+    @include breakpoint(tablet-portrait) {
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+  }
+
+  &__message {
+    font-size: 1.8rem;
+  }
+
+  &__illustration {
+    display: flex;
+
+    & img {
+      width: 100%;
+    }
+  }
+}

@@ -14,7 +14,7 @@ const Header = () => {
 
     const currentTheme = localStorage.getItem("theme")
       ? localStorage.getItem("theme")
-      : null;
+      : "light";
 
     if (currentTheme) {
       document.documentElement.setAttribute("data-theme", currentTheme);

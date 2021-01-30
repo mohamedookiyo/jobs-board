@@ -56,4 +56,11 @@
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     grid-gap: 7rem 3rem;
   }
+
+  &__error {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 40rem));
+    align-items: center;
+    justify-content: center;
+    grid-gap: 6rem 4rem;
+  }
 }
