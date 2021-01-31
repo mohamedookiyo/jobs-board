@@ -18,16 +18,15 @@ const handlePopup = (e) => {
 };
 
 // Search form component
-const Search = ({ params, onParamChange, onFullTime }) => {
+const Search = ({ onParamChange, onFullTime, onFormSubmit }) => {
   return (
     <div className="container">
-      <form className="form grid grid__search">
+      <form className="form grid grid__search" onSubmit={onFormSubmit}>
         <div className="form__description">
           <img src={searchIcon} alt="Search icon" />
           <input
             type="text"
             name="description"
-            value={params.description || ""}
             onChange={onParamChange}
             placeholder="Filter by title and companies"
           />
@@ -37,19 +36,13 @@ const Search = ({ params, onParamChange, onFullTime }) => {
           <input
             type="text"
             name="location"
-            value={params.location || ""}
             onChange={onParamChange}
             placeholder="Filter by location"
           />
         </div>
         <div className="form__cta">
           <label className="form__checkbox">
-            <input
-              type="checkbox"
-              name="full_time"
-              value={params.full_time || false}
-              onClick={onFullTime}
-            />
+            <input type="checkbox" name="full_time" onClick={onFullTime} />
             <span>Full Time</span>
           </label>
           <button className="btn btn__search" type="submit">
@@ -57,12 +50,11 @@ const Search = ({ params, onParamChange, onFullTime }) => {
           </button>
         </div>
       </form>
-      <form className="form grid grid__search-mobile">
+      <form className="form grid grid__search-mobile" onSubmit={onFormSubmit}>
         <div className="form__description">
           <input
             type="text"
             name="description"
-            value={params.description || ""}
             onChange={onParamChange}
             placeholder="Filter by title..."
           />
@@ -81,26 +73,27 @@ const Search = ({ params, onParamChange, onFullTime }) => {
           </button>
         </div>
       </form>
-      <form className="form__popup">
+      <form
+        className="form__popup"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handlePopup(e);
+          onFormSubmit(e);
+        }}
+      >
         <div className="form__location">
           <img src={locationIcon} alt="Location icon" />
           <input
             className="form__popup-location"
             type="text"
             name="location"
-            value={params.location || ""}
             onChange={onParamChange}
             placeholder="Filter by location..."
           />
         </div>
         <div className="form__popup-cta">
           <label className="form__checkbox">
-            <input
-              type="checkbox"
-              name="full_time"
-              value={params.full_time || false}
-              onClick={onFullTime}
-            />
+            <input type="checkbox" name="full_time" onClick={onFullTime} />
             <span>Full Time Only</span>
           </label>
           <button className="btn btn__search btn--full" type="submit">

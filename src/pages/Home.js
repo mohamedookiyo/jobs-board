@@ -10,6 +10,21 @@ const Home = () => {
   const [params, setParams] = useState({});
   const [page, setPage] = useState(1);
 
+  // Form data
+  const formData = {};
+
+  // Handle submit form
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // Set page to 1 after each new search query
+    setPage(1);
+
+    setParams((prevParams) => {
+      return { ...prevParams, ...formData };
+    });
+  };
+
   // Use custom hook
   const { data, loading, error, hasNextPage } = useFetchJobs(params, page);
 
@@ -23,12 +38,7 @@ const Home = () => {
     const param = e.target.name;
     const value = e.target.value;
 
-    // Set page to 1 after each new search query
-    setPage(1);
-
-    setParams((prevParams) => {
-      return { ...prevParams, [param]: value };
-    });
+    formData[param] = value;
   };
 
   // Handle full time checkbox
@@ -36,20 +46,15 @@ const Home = () => {
     const param = e.target.name;
     const value = e.target.checked;
 
-    // Set page to 1 after each new search query
-    setPage(1);
-
-    setParams((prevParams) => {
-      return { ...prevParams, [param]: value };
-    });
+    formData[param] = value;
   };
 
   return (
     <>
       <Search
-        params={params}
         onParamChange={handleParamChange}
         onFullTime={handleFullTime}
+        onFormSubmit={handleFormSubmit}
       />
       {error && <Error error={error} />}
 

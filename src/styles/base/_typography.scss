@@ -11,6 +11,7 @@ body {
   background-color: var(--body-bg);
   color: var(--body-text);
   transition: background-color 0.2s ease-in-out;
+  overflow-x: scroll;
 
   &.active {
     overflow: hidden;

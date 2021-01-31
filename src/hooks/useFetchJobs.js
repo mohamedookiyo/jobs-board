@@ -36,10 +36,17 @@ export default function useFetchJobs(params, page) {
         if (response.data.length !== 0) {
           dispatch(fetchData(response.data));
         } else {
+          // Custom error message
+          const description = params.description ? `${params.description}` : "";
+          const location = params.location ? `in ${params.location}` : "";
+          const fullTime = params.full_time ? "full time" : "";
+
+          const errorMessage = `No ${fullTime} ${description} jobs found ${location}.`;
+
           dispatch(
             failureToFetchData([
-              "Oops, no jobs were found!",
-              "Please try another search query.",
+              "Oops, something went wrong!",
+              errorMessage,
               false,
             ])
           );
@@ -51,7 +58,7 @@ export default function useFetchJobs(params, page) {
         dispatch(
           failureToFetchData([
             "Oops, something went wrong!",
-            "Please refresh the page or clear search fields.",
+            "Please refresh the page or make a new search query.",
             true,
           ])
         );
