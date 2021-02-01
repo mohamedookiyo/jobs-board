@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import Loader from "./components/Loader";
+import ScrollBackToTop from "./components/ScrollBackToTop";
 import useFetchJobs from "./hooks/useFetchJobs";
 
 import "./App.scss";
@@ -21,6 +22,7 @@ const App = () => {
               <Route exact path="/" component={Home} />
             </Switch>
           )}
+          <ScrollBackToTop />
         </>
       </main>
     </Router>

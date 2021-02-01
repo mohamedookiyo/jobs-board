@@ -74,6 +74,12 @@ const Home = () => {
                     Load More
                   </button>
                 )}
+
+                {!hasNextPage && (
+                  <p className="home__text">
+                    There are no more jobs to display at this time.
+                  </p>
+                )}
               </div>
             )}
           </>
