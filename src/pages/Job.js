@@ -140,7 +140,17 @@ const Job = ({ match }) => {
                   <p className="card__location">{job.location}</p>
                 </div>
                 <div className="job__body-cta">
-                  <a href="#apply-now" className="btn btn__apply">
+                  <a
+                    href={
+                      applyNowEmail(job.how_to_apply)
+                        ? `mailto:${applyNowEmail(job.how_to_apply)}`
+                        : applyNowLink(job.how_to_apply)
+                    }
+                    id="apply-now"
+                    className="btn btn__apply"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Apply Now
                   </a>
                 </div>
@@ -194,7 +204,6 @@ const Job = ({ match }) => {
                       ? `mailto:${applyNowEmail(job.how_to_apply)}`
                       : applyNowLink(job.how_to_apply)
                   }
-                  id="apply-now"
                   className="btn btn__apply"
                   target="_blank"
                   rel="noreferrer"

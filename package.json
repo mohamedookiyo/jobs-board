@@ -4,7 +4,6 @@
   "private": true,
   "description": "A fully-functional jobs board using the GitHub Jobs API data.",
   "author": "Mohamed Ibrahiim (Ookiyo)",
-  "proxy": "https://jobs.github.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

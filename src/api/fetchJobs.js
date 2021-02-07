@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Axious instance with baseUrl
 const api = axios.create({
-  baseURL: "/",
+  baseURL: "https://cors-anywhere.herokuapp.com/https://jobs.github.com/",
 });
 
 // Fecth jobs
