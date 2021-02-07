@@ -2,14 +2,14 @@ html[data-theme="light"] {
   --body-bg: var(--light-gray);
   --body-text: var(--dark-gray);
   --heading: var(--very-dark-blue);
+  --site-button: var(--violet);
   --card-bg: var(--white);
   --card-box-shadow: 0 0.2rem 2rem rgba(109, 127, 151, 0.15);
   --form-shadow: 0 0.5rem 1.5rem rgba(96, 106, 215, 0.15);
   --input-text-color: var(--very-dark-blue);
-  --input-border-color: #e0e0e0;
+  --input-border-color: #eceff1;
   --checkbox-bg: #dedede;
   --full-time-color: var(--very-dark-blue);
   --icon-filter-fill: #6e8098;
   --icon-search-fill: var(--violet);
-  --footer-bg: var(--white);
 }

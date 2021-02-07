@@ -17,7 +17,6 @@ export const jobsReducer = (state, action) => {
       };
     case MAKE_NEW_REQUEST:
       return {
-        ...state,
         loading: true,
         data: [],
         error: false,

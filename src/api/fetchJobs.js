@@ -2,12 +2,12 @@ import axios from "axios";
 
 // Axious instance with baseUrl
 const api = axios.create({
-  baseURL: "/positions.json",
+  baseURL: "/",
 });
 
 // Fecth jobs
 export const fetchJobs = async (tokenToCancel, page, params) => {
-  const jobs = await api.get("", {
+  const jobs = await api.get("positions.json", {
     cancelToken: tokenToCancel.token,
     params: {
       markdown: true,
@@ -21,7 +21,7 @@ export const fetchJobs = async (tokenToCancel, page, params) => {
 
 // Fetch more jobs
 export const fetchMoreJobs = async (tokenToCancel, page, params) => {
-  const jobs = await api.get("", {
+  const jobs = await api.get("positions.json", {
     cancelToken: tokenToCancel.token,
     params: {
       markdown: true,
@@ -31,4 +31,15 @@ export const fetchMoreJobs = async (tokenToCancel, page, params) => {
   });
 
   return jobs;
+};
+
+// Fecth single job
+export const fetchSingleJob = async (jobID) => {
+  const job = await api.get(`positions/${jobID}.json`, {
+    params: {
+      markdown: true,
+    },
+  });
+
+  return job;
 };

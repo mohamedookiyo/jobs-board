@@ -15,11 +15,7 @@
   }
 
   @include breakpoint(mobile-lg) {
-    padding: 0 4rem;
-  }
-
-  @include breakpoint(mobile-sm) {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 }
 
@@ -55,6 +51,32 @@
   &__home {
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     grid-gap: 7rem 3rem;
+  }
+
+  &__job-header {
+    grid-template-columns: 1fr minmax(16rem, 25%);
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(tablet-portrait) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__company-info {
+    grid-template-columns: minmax(16rem, 16rem) 1fr;
+    grid-gap: 3rem;
+    align-items: center;
+
+    @include breakpoint(tablet-landscape) {
+      grid-template-columns: minmax(14rem, 14rem) 1fr;
+    }
+
+    @include breakpoint(tablet-portrait) {
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(10rem, 10rem) 1fr;
+      justify-content: center;
+    }
   }
 
   &__error {

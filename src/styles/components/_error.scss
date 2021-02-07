@@ -2,7 +2,7 @@
 // ERROR
 
 .error {
-  margin-top: 5rem;
+  margin: 10rem 0 12rem;
 
   &__text {
     @include breakpoint(tablet-portrait) {
@@ -11,11 +11,21 @@
   }
 
   &__heading {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+
+    @include breakpoint(tablet-portrait) {
+      font-size: 1.8rem;
+    }
   }
 
   &__message {
     font-size: 1.8rem;
+    margin-top: 1rem;
+
+    @include breakpoint(tablet-portrait) {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+    }
   }
 
   &__illustration {

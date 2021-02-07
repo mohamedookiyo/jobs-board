@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import useFetchJobs from "../hooks/useFetchJobs";
 import Search from "../components/Search";
 import Card from "../components/Card";
@@ -62,7 +63,9 @@ const Home = () => {
         {!error && (
           <>
             {data.map((job) => (
-              <Card key={job.id} job={job} />
+              <Link to={`/positions/${job.id}`} key={job.id} className="card">
+                <Card job={job} />
+              </Link>
             ))}
 
             {loading ? (

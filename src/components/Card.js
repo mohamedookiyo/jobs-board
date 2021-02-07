@@ -3,7 +3,7 @@ import { beautifyJobDate } from "../helpers/beautifyJobDate";
 
 const Card = ({ job }) => {
   return (
-    <div className="card">
+    <>
       <div className="card__logo">
         <img
           src={job.company_logo ? job.company_logo : cardLogo}
@@ -22,7 +22,7 @@ const Card = ({ job }) => {
       <div className="card__location">
         <p>{job.location}</p>
       </div>
-    </div>
+    </>
   );
 };
 

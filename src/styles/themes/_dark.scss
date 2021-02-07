@@ -2,11 +2,27 @@ html[data-theme="dark"] {
   --body-bg: var(--midnight);
   --body-text: var(--gray);
   --heading: var(--white);
+  --site-button: var(--white);
   --card-bg: var(--very-dark-blue);
   --input-text-color: var(--light-gray);
   --input-border-color: #37474f;
   --checkbox-bg: var(--dark-gray);
   --full-time-color: var(--gray);
   --icon-filter-fill: var(--gray);
-  --footer-bg: var(--dark-gray);
+}
+
+// Preference detection of dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: var(--midnight);
+    --body-text: var(--gray);
+    --heading: var(--white);
+    --site-button: var(--white);
+    --card-bg: var(--very-dark-blue);
+    --input-text-color: var(--light-gray);
+    --input-border-color: #37474f;
+    --checkbox-bg: var(--dark-gray);
+    --full-time-color: var(--gray);
+    --icon-filter-fill: var(--gray);
+  }
 }
